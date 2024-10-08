@@ -1,0 +1,161 @@
+/* Variables */
+:root {
+    --background-color: #121212; /* Just the color of my existential dread */
+    --primary-text-color: #E0E0E0; /* A brightness that feels like a cruel joke */
+    --secondary-text-color: #B0B0B0; /* Because gray is the color of my hopes */
+    --accent-color: #965edb; /* Trying to be vibrant but falling short */
+    --link-color: #d33476; /* Links, the only things leading somewhere... usually */
+    --error-color: #ff3e62; /* The color of regret; so fitting */
+}
+
+/* Global Styles */
+body {
+    background: linear-gradient(135deg, #121212, #1E1E1E); /* A beautiful mix of darkness and confusion */
+    background-size: 200% 200%; /* Always more chaos than clarity */
+    animation: gradient 10s ease infinite; /* Just like my never-ending thoughts */
+    color: var(--primary-text-color);
+    font-family: 'Roboto'; /* A font as generic as my life choices */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+header {
+    text-align: center; /* Centering my fleeting aspirations */
+    padding: 50px 0; /* The weight of the world needs some space */
+}
+
+/* Card Component */
+.card {
+    background-color: #1E1E1E; /* Perfectly dark, like my mood */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    max-width: 400px; /* A reminder that my dreams are small */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05); /* A brief moment of joy before reality hits */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+}
+
+/* Button Styles */
+.button {
+    background-color: var(--accent-color);
+    color: var(--primary-text-color);
+    padding: 10px 20px; /* Comfort food for the soul */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; /* Click for false hope */
+    transition: background-color 0.3s, transform 0.3s;
+    display: inline-block; /* Keeps it neat, unlike my life */
+}
+
+.button:hover {
+    background-color: #61438b; /* Darkening like my outlook on life */
+    transform: scale(1.05);
+}
+
+/* Loading Spinner */
+.loader {
+    border: 6px solid var(--secondary-text-color);
+    border-top: 6px solid var(--accent-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite; /* Spinning my wheels, as usual */
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Progress Bar Styles */
+.progress-bar {
+    background-color: var(--secondary-text-color);
+    border-radius: 20px;
+    height: 20px;
+    width: 100%; /* Because life doesn’t hold back on disappointments */
+    margin: 20px 0;
+}
+
+.progress {
+    background-color: var(--accent-color);
+    height: 100%;
+    border-radius: 20px;
+    transition: width 0.4s; /* Watching it slowly vanish */
+}
+
+/* Tooltip Styles */
+.tooltip {
+    position: relative; /* Always waiting for the right moment */
+    display: inline-block;
+    cursor: pointer; /* A click away from the truth */
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: var(--secondary-text-color);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1; /* Revealing truths that hurt */
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1E1E1E; /* The dark path of my scrolling through despair */
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #61428b; /* Darker on hover, just like my humor */
+}
+
+/* Neumorphism Effect */
+.neumorphic {
+    background: #1E1E1E; /* Deep shadows reflect deep thoughts */
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 8px 8px 20px #0A0A0A, -8px -8px 20px #292929;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Shrinking dreams to fit a smaller screen */
+    }
+}
+
+/* Animated Background */
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; /* Just going in circles, like my life */ }
+}

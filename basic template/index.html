@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website Title - Because why not?</title>
+
+    <!-- Import Obsidian Framework CSS -->
+    <link rel="stylesheet" href="Obsidian.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        /* Custom Styles */
+        body {
+            background-color: var(--background-color);
+            color: var(--primary-text-color);
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #121212, #1E1E1E);
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            color: var(--accent-color);
+            margin: 0;
+            font-size: 2.5em; /* Large heading */
+        }
+
+        /* Navigation Styles */
+        nav {
+            margin: 20px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: var(--link-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Main Content Styles */
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #1E1E1E;
+            color: var(--primary-text-color);
+        }
+
+        section {
+            margin-bottom: 30px; /* Spacing between sections */
+        }
+
+        h2 {
+            color: var(--accent-color);
+            margin-top: 20px;
+            font-size: 1.8em;
+        }
+
+        /* Button Styles */
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--accent-color);
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #61438b; /* Darken accent color on hover */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Welcome to my Website</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section id="home">
+            <h2>Home</h2>
+            <p>Welcome to my website. Yes, you’re here. Enjoy this virtual space where I pretend everything is okay.</p>
+        </section>
+
+        <section id="about">
+            <h2>About</h2>
+            <p>This section contains all the *fascinating* details about my life. Spoiler alert: it’s not as interesting as you'd think.</p>
+        </section>
+
+        <section id="services">
+            <h2>Services</h2>
+            <p>Here are the services I offer, if you're interested in this sad little journey:</p>
+            <ul>
+                <li>Service 1 - Because everyone needs something.</li>
+                <li>Service 2 - You’ll probably regret this.</li>
+                <li>Service 3 - But hey, at least it's an option.</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Feel free to reach out via email or social media, if you must.</p>
+            <a href="mailto:your.email@example.com" class="button">Email Me (I guess)</a>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Your Name | All Rights Reserved. Not that it matters.</p>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Particles.js (Optional)
+        particlesJS("particles-js", {
+            particles: {
+                number: { value: 100 },
+                size: { value: 3 },
+                move: { speed: 2 },
+                line_linked: { enable: true },
+            },
+            interactivity: {
+                events: {
+                    onhover: { enable: true, mode: "repulse" },
+                },
+            },
+        });
+    </script>
+</body>
+
+</html>

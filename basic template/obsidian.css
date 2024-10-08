@@ -1,0 +1,161 @@
+/* Variables */
+:root {
+    --background-color: #121212;
+    --primary-text-color: #E0E0E0;
+    --secondary-text-color: #B0B0B0;
+    --accent-color: #965edb;
+    --link-color: #d33476;
+    --error-color: #ff3e62;
+}
+
+/* Global Styles */
+body {
+    background: linear-gradient(135deg, #121212, #1E1E1E);
+    background-size: 200% 200%;
+    animation: gradient 10s ease infinite;
+    color: var(--primary-text-color);
+    font-family: 'Roboto';
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    padding: 50px 0;
+}
+
+/* Card Component */
+.card {
+    background-color: #1E1E1E;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    max-width: 400px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+}
+
+/* Button Styles */
+.button {
+    background-color: var(--accent-color);
+    color: var(--primary-text-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    display: inline-block; /* Ensures it respects margins */
+}
+
+.button:hover {
+    background-color: #61438b; /* Darken accent color */
+    transform: scale(1.05);
+}
+
+/* Loading Spinner */
+.loader {
+    border: 6px solid var(--secondary-text-color);
+    border-top: 6px solid var(--accent-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto; /* Centering the loader */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Progress Bar Styles */
+.progress-bar {
+    background-color: var(--secondary-text-color);
+    border-radius: 20px;
+    height: 20px;
+    width: 100%;
+    margin: 20px 0; /* Space around the progress bar */
+}
+
+.progress {
+    background-color: var(--accent-color);
+    height: 100%;
+    border-radius: 20px;
+    transition: width 0.4s;
+}
+
+/* Tooltip Styles */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: var(--secondary-text-color);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Position above the tooltip */
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1E1E1E;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #61428b; /* Darken on hover */
+}
+
+/* Neumorphism Effect */
+.neumorphic {
+    background: #1E1E1E;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 8px 8px 20px #0A0A0A, -8px -8px 20px #292929;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+/* Animated Background */
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obsidian Framework</title>
+
+    <!-- Stylesheet to make this sad design slightly less sad -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Font Awesome for Icons, because why not? Icons make everything feel better, right? -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Particles.js for Dynamic Backgrounds, because static backgrounds are just too stable for this journey -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <style>
+        /* Global Styles, because everything needs to be styled even if life doesn’t */
+        :root {
+            --background-color: #121212;
+            --primary-text-color: #E0E0E0; /* A color that screams 'meh' */
+            --secondary-text-color: #B0B0B0; /* Just a shade duller, because why not? */
+            --accent-color: #965edb; /* Because we all need a little color in our bleak existence */
+            --link-color: #d33476; /* Links that might just lead to disappointment */
+            --error-color: #ff3e62; /* The color of your hopes and dreams when they shatter */
+        }
+
+        body {
+            font-family: 'Arial', sans-serif; /* Because who needs a fancy font when you can have Arial? */
+            margin: 0; /* Let's remove all margins like we've removed all joy */
+            padding: 0; /* No padding, just like my emotions */
+            color: var(--primary-text-color); /* You can’t see the light when you’re trapped in the dark */
+            background: linear-gradient(135deg, #121212, #1E1E1E); /* A beautiful gradient that matches my mood */
+            overflow-y: auto; /* Allow vertical scrolling for all the tears I’ll shed */
+            height: 100vh; /* Because you should feel the weight of the world pressing down on you */
+        }
+
+        header {
+            text-align: center; /* Let's center our sadness */
+            padding: 50px 0; /* A generous amount of space to ponder life’s choices */
+            position: relative;
+            z-index: 1; /* Keep the header above the particles, because it’s already too far down */
+        }
+
+        h1 {
+            font-size: 2.5em; /* Huge header to make you question everything */
+            color: var(--accent-color); /* Might as well add some color to this gloomy existence */
+            margin-bottom: 20px; /* Because who doesn't love a little space between their pain? */
+        }
+
+        .button {
+            background-color: var(--accent-color); /* A bright button to remind you that life could be colorful, but isn’t */
+            color: #fff; /* Because everything looks better in white, just like unfulfilled dreams */
+            padding: 15px 30px; /* Comfortable padding for all those sad clicks */
+            border: none; /* No borders, just like my lack of boundaries */
+            border-radius: 5px; /* Rounded edges to soften the blow of reality */
+            font-size: 1.2em; /* Large enough for you to see your mistakes */
+            cursor: pointer; /* Because we all need something to click in life */
+            transition: background-color 0.3s; /* Just like life, everything changes too quickly */
+            text-decoration: none; /* Remove underline, much like the underlining of life’s problems */
+            display: inline-block; /* Ensure button respects margins; let’s not crowd each other */
+        }
+
+        .button:hover {
+            background-color: #61438b; /* Darken accent color, just like the light in my life */
+        }
+
+        main {
+            display: flex; /* Because it’s a struggle to maintain balance in life */
+            justify-content: center; /* Let’s center our problems */
+            align-items: center; /* We all just want to be aligned with our sadness */
+            flex-direction: column; /* Stack all my regrets on top of each other */
+            padding: 20px; /* Add padding for better spacing, because I need some space from my thoughts */
+            position: relative;
+            z-index: 1; /* Make sure main content is above particles, because who needs distractions? */
+        }
+
+        .card {
+            background-color: #1E1E1E; /* Dark card for all my dark thoughts */
+            border-radius: 10px; /* Soft edges to cushion the blow */
+            padding: 20px; /* Generous padding for all the bad decisions I’ll be making */
+            margin: 20px auto; /* Centered margin for those who want to contemplate their life choices */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* A shadow that represents my soul */
+            max-width: 400px; /* Keep it small, just like my dreams */
+            text-align: center; /* Because staring at walls is so yesterday */
+            transition: transform 0.3s, box-shadow 0.3s; /* Everything fades; some faster than others */
+        }
+
+        .card:hover {
+            transform: translateY(-5px); /* A brief moment of levitation before the inevitable fall */
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7); /* Shadows getting darker, just like my thoughts */
+        }
+
+        input[type="text"] {
+            width: calc(100% - 20px); /* Enough space to fill in the void */
+            padding: 10px; /* A small comfort for big fears */
+            border: none; /* No borders, just like the lack of boundaries in my life */
+            border-radius: 5px; /* Rounded edges to soften the harshness */
+            margin-top: 10px; /* Because we all need a little space to breathe */
+            background-color: #292929; /* Dark background for dark thoughts */
+            color: var(--primary-text-color); /* Same dull text color, because who really cares? */
+        }
+
+        input[type="text"]::placeholder {
+            color: var(--secondary-text-color); /* Placeholder color that represents unfulfilled potential */
+        }
+
+        .loader {
+            border: 6px solid var(--secondary-text-color); /* A spinning symbol of my unending wait for something good */
+            border-top: 6px solid var(--accent-color); /* The only part of this loader that brings a hint of joy */
+            border-radius: 50%; /* Circular like the endless cycle of despair */
+            width: 50px; /* Small, just like my hopes */
+            height: 50px; /* Height that barely reaches the sky */
+            animation: spin 1s linear infinite; /* Spin and spin until you forget what you were waiting for */
+            margin: 20px auto; /* Centering the loader for maximum visibility of my anguish */
+            display: none; /* Hide initially, just like my true feelings */
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg); /* A full cycle, just like the same mistakes I keep making */
+            }
+        }
+
+        .progress-bar {
+            background-color: var(--secondary-text-color); /* A bar that signifies progress in a life that feels stagnant */
+            border-radius: 20px; /* Rounded edges for comfort */
+            height: 20px; /* Not tall enough to reach my dreams */
+            width: 100%; /* Full width, just like my lack of direction */
+            margin: 20px 0; /* Space around the progress bar, because I need space from reality */
+        }
+
+        .progress {
+            background-color: var(--accent-color); /* A bright spot in an otherwise bleak landscape */
+            height: 100%; /* Reaching for the top, but only in theory */
+            border-radius: 20px; /* Soft edges for my harsh reality */
+            transition: width 0.4s; /* Watch it slowly fade away */
+        }
+
+        .tooltip {
+            position: relative; /* Because life is all about positioning yourself just right */
+            display: inline-block; /* No need to take up too much space, we’re all just trying to get by */
+            cursor: pointer; /* A click away from all the bad decisions */
+            margin-top: 10px; /* More space for my thoughts to wander */
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden; /* Hiding the truth because it’s just too much to bear */
+            width: 120px; /* A short width for long conversations about nothing */
+            background-color: var(--secondary-text-color); /* The color of things we wish we could say */
+            color: #fff; /* Bright text for dark thoughts */
+            text-align: center; /* Centering my disillusionment */
+            border-radius: 6px; /* Edges softened for a gentler impact */
+            padding: 5px; /* A small comfort for big worries */
+            position: absolute;
+            z-index: 1; /* Let’s make sure we can’t miss this reminder */
+            bottom: 125%; /* Position above the tooltip, because the truth always looms above */
+            left: 50%;
+            margin-left: -60px; /* To ensure we never really know how far we’ve come */
+            opacity: 0; /* Because sometimes it’s best to remain unseen */
+            transition: opacity 0.3s; /* Watch as it slowly fades into oblivion */
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible; /* When hovered, the truth is finally revealed, but at what cost? */
+            opacity: 1; /* Full visibility for a moment, until it fades away */
+        }
+
+        footer {
+            text-align: center; /* Because we’re all alone in this world */
+            padding: 20px; /* Let’s pad this to soften the blow of reality */
+            background-color: #1E1E1E; /* A fitting end to a dark tale */
+            position: relative;
+            z-index: 1; /* Let’s keep the footer above all the sadness */
+        }
+
+        footer p {
+            color: var(--secondary-text-color); /* The same dull color that matches the vibe */
+            margin: 0; /* No space for feelings here */
+        }
+
+        /* Responsive Styles for when life throws you curveballs */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em; /* A slightly smaller reminder of the things I’ll never achieve */
+            }
+
+            .card {
+                width: 90%; /* So I can feel confined even on mobile */
+                padding: 15px; /* A tad less comfort for all those growing worries */
+            }
+
+            .button {
+                padding: 10px 20px; /* A smaller button for a smaller world */
+                font-size: 1em; /* Who needs big plans when you can have tiny aspirations? */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Dynamic Background Container, because the world should always be spinning -->
+    <div id="particles-js" style="position: absolute; width: 100%; height: 100%; z-index: -1;"></div>
+
+    <header>
+        <h1>Welcome to the Obsidian Framework</h1>
+        <a href="#get-started" class="button">Get Started</a> <!-- Click here if you dare -->
+    </header>
+
+    <main>
+        <div class="card">
+            <h2>About This Framework</h2>
+            <p>This framework is designed for creating dark-themed applications with ease. Just like my life.</p>
+            <input type="text" placeholder="Enter your name"> <!-- Because you matter, even if it feels like you don’t -->
+            <button class="button" onclick="showLoader()">Submit</button>
+            <div class="loader"></div>
+            <div class="progress-bar">
+                <div class="progress" style="width: 70%;"></div> <!-- Almost there, or maybe not -->
+            </div>
+            <div class="tooltip">Hover over me <!-- Because maybe you'll find something worth knowing -->
+                <span class="tooltiptext">Tooltip text</span>
+            </div>
+            <i class="fas fa-user"></i> User Profile <!-- Just a reminder of the loneliness -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Obsidian Framework. All Rights Reserved. Just like the dreams I never had.</p>
+    </footer>
+
+    <script>
+        // Particles.js Initialization, because the chaos must continue
+        particlesJS("particles-js", {
+            particles: {
+                number: { value: 100 }, /* Because there are always too many problems */
+                size: { value: 3 }, /* Just enough to be insignificant */
+                move: { speed: 2 }, /* The speed at which life passes us by */
+                line_linked: { enable: true }, /* Tying together all the lost connections */
+            },
+            interactivity: {
+                events: {
+                    onhover: { enable: true, mode: "repulse" }, /* Just like how we push away our emotions */
+                },
+            },
+        });
+
+        // Function to Show Loader on Button Click
+        function showLoader() {
+            const loader = document.querySelector('.loader');
+            loader.style.display = 'block'; /* The moment we unveil our true selves */
+            setTimeout(() => {
+                loader.style.display = 'none';
+                alert("Hello, " + document.querySelector('input[type="text"]').value + "!"); /* A hollow greeting for a hollow existence */
+            }, 2000); // Simulate a loading time, just like waiting for life to start
+        }
+    </script>
+</body>
+
+</html>
