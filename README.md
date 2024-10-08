@@ -29,7 +29,7 @@ To start using the Obsidian framework,
 Add the following link to your HTML to incorporate Obsidian styles:
 
 ```html
-<link rel="stylesheet" href="https://github.com/xalo7474/xalo7474.github.io/edit/main/obsidian.css">
+<link rel="stylesheet" href="https://github.com/xalo7474/xalo7474.github.io/blob/main/obsidian.css">
 ```
 
 ### **Explore the Documentation**
