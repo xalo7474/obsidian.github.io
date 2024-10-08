@@ -1,1 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obsidian Documentation</title>
+    
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Global Variables */
+        :root {
+            --background-color: #121212;
+            --primary-text-color: #E0E0E0;
+            --secondary-text-color: #B0B0B0;
+            --accent-color: #965edb;
+            --link-color: #d33476;
+            --footer-background: #1E1E1E;
+        }
+
+        /* Global Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--background-color);
+            color: var(--primary-text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 0;
+            background: linear-gradient(135deg, #121212, #1E1E1E);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            color: var(--accent-color);
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        nav {
+            margin: 20px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: var(--link-color);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto; /* Enable vertical scrolling */
+            overflow-x: hidden; /* Hide horizontal scrolling if not needed */
+            height: calc(100vh - 120px); /* Adjust height to allow for header and footer */
+        }
+
+        section {
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #1E1E1E;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        h2, h3 {
+            color: var(--accent-color);
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        code {
+            background-color: #292929;
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: #E0E0E0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        pre {
+            background-color: #292929;
+            padding: 10px;
+            border-radius: 5px;
+            overflow: auto;
+        }
+
+        pre code {
+            color: #E0E0E0;
+            white-space: pre-wrap; /* Allows long code lines to wrap */
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 20px;
+            text-align: center;
+            background-color: var(--footer-background);
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .feature {
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #1E1E1E;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+        }
+
+        .example-button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: var(--accent-color);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .example-button:hover {
+            background-color: #61438b; /* Darken accent color */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            header {
+                padding: 20px 0;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            nav ul li {
+                margin-right: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Obsidian Documentation</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#getting-started">Getting Started</a></li>
+                <li><a href="#components">Components</a></li>
+                <li><a href="#examples">Examples</a></li>
+                <li><a href="#advanced">Advanced Features</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="getting-started">
+            <h2>Getting Started</h2>
+            <p>Follow these instructions to set up Obsidian in your project.</p>
+            <h3>Installation</h3>
+            <pre><code>npm install Obsidian-framework</code></pre>
+            <p>Import the CSS file in your HTML:</p>
+            <pre><code>&lt;link rel="stylesheet" href="path/to/Obsidian.css"&gt;</code></pre>
+            <p>Ensure you have included the Font Awesome library for icons:</p>
+            <pre><code>&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"&gt;</code></pre>
+        </section>
+
+        <section id="components">
+            <h2>Components</h2>
+            <h3>Buttons</h3>
+            <p>Use the <code>.button</code> class for styling buttons:</p>
+            <pre><code>&lt;button class="button"&gt;Click Me&lt;/button&gt;</code></pre>
+
+            <h3>Cards</h3>
+            <p>Example of a card component:</p>
+            <div class="feature" style="width: 300px; margin: auto;">
+                <h4>Card Title</h4>
+                <p>This is a sample card with some text.</p>
+                <a href="#" class="example-button">Learn More</a>
+            </div>
+
+            <h3>Loading Spinner</h3>
+            <p>To add a loading spinner, use the <code>.loader</code> class:</p>
+            <pre><code>&lt;div class="loader"&gt;&lt;/div&gt;</code></pre>
+
+            <h3>Progress Bar</h3>
+            <p>Implement a progress bar like this:</p>
+            <div class="progress-bar" style="margin: 20px 0;">
+                <div class="progress" style="width: 50%;"></div>
+            </div>
+        </section>
+
+        <section id="examples">
+            <h2>Examples</h2>
+            <p>Here are some example components built with Obsidian:</p>
+            <div class="feature-grid">
+                <div class="feature">
+                    <h3>Feature 1</h3>
+                    <p>Description of Feature 1.</p>
+                    <a href="#" class="example-button">View Example</a>
+                </div>
+                <div class="feature">
+                    <h3>Feature 2</h3>
+                    <p>Description of Feature 2.</p>
+                    <a href="#" class="example-button">View Example</a>
+                </div>
+                <div class="feature">
+                    <h3>Feature 3</h3>
+                    <p>Description of Feature 3.</p>
+                    <a href="#" class="example-button">View Example</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="advanced">
+            <h2>Advanced Features</h2>
+            <p>Explore some advanced functionalities you can use with Obsidian.</p>
+            
+            <h3>Custom Scrollbars</h3>
+            <p>Style your scrollbars with these CSS rules:</p>
+            <pre><code>
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #1E1E1E;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #61428b; /* Darken on hover */
+}</code></pre>
+
+            <h3>Neumorphism Effect</h3>
+            <p>To create a neumorphic effect, use the following class:</p>
+            <pre><code>.neumorphic {
+    background: #1E1E1E;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 8px 8px 20px #0A0A0A, -8px -8px 20px #292929;
+}</code></pre>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Obsidian. All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>
