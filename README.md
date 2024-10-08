@@ -29,18 +29,18 @@ To start using the Obsidian framework,
 Add the following link to your HTML to incorporate Obsidian styles:
 
 ```html
-<link rel="stylesheet" href="Obsidian.css">
+<link rel="stylesheet" href="https://github.com/xalo7474/xalo7474.github.io/edit/main/obsidian.css">
 ```
 
 ### **Explore the Documentation**
 
-For detailed usage examples and best practices, visit my [documentation](link_to_my_documentation).
+For detailed usage examples and best practices, visit my [documentation](https://xalo7474.github.io/docs).
 
 ---
 
 ## 📚 Examples
 
-Check out my [Examples](link_to_my_examples) section to see Obsidian in action and discover how it can transform your projects.
+Check out my [Examples]([link_to_my_examples](https://xalo7474.github.io/index.html) section to see Obsidian in action and discover how it can transform your projects.
 
 ---
 
@@ -55,10 +55,10 @@ Together, we can make Obsidian even better.
 
 ## 📜 License
 
-This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the **MIT License**. See the [LICENSE](LICENSE.md) file for details.
 
 ---
 
 ## 📞 Support
 
-If you have any questions or need support, feel free to reach out via [Issues](link_to_my_issues).
+If you have any questions or need support, feel free to reach out via [Issues](issues).
